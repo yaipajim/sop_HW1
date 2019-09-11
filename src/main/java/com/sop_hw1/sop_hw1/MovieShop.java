@@ -2,10 +2,9 @@ package com.sop_hw1.sop_hw1;
 
 import java.util.ArrayList;
 import java.util.List;
-import com.sop_hw1.sop_hw1.Cart;
 
 public class MovieShop {
-    private static List<Movie> movies = new ArrayList<>();
+    public static List<Movie> movies = new ArrayList<>();
 
     static {
         movies.add(MovieFactory.create("001", "The Shawshank Redemption", 9.3, "Drama"));
@@ -20,22 +19,13 @@ public class MovieShop {
         return movies;
     }
 
-    public Movie findOne(String id) {
+    public Movie getOne(String id) {
         for (Movie movie : movies) {
             if(movie.getId().equalsIgnoreCase(id)) {
                 return movie;
             }
         }
         return null;
-    }
-    public Cart cartMovie(String id) {
-        Movie _movie = null;
-        for (Movie movie : movies) {
-            if(movie.getId().equalsIgnoreCase(id)) {
-                _movie = movie;
-            }
-        }
-        return new Cart(_movie.getId(),_movie.getTitle(), _movie.getPrice());
     }
 
 }

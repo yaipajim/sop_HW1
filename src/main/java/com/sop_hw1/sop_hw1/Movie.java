@@ -24,7 +24,7 @@ public class Movie {
 
 
     public void setId(String id) {
-        id = id;
+        this.id = id;
     }
 
 
@@ -56,7 +56,6 @@ public class Movie {
     public void setGenre(String genre) {
         this.genre = genre;
     }
-
 
 
     @Override
