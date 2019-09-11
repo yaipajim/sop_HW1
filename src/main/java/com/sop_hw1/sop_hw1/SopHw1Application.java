@@ -6,6 +6,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.*;
 
+import static com.sop_hw1.sop_hw1.MovieShop.fileReader;
+import static com.sop_hw1.sop_hw1.MovieShop.fileWriter;
+
 @SpringBootApplication
 @RestController
 public class SopHw1Application {
@@ -13,6 +16,7 @@ public class SopHw1Application {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SopHw1Application.class, args);
+		fileReader();
 	}
 	private static List<Movie> shoppingCart = new ArrayList<>();
 
@@ -37,6 +41,7 @@ public class SopHw1Application {
 	@RequestMapping("/cart")
 	public List<Movie> cartMovie(){
 		MovieFactory movieFactory = MovieFactory.getInstance();
+		fileWriter();
 		return SopHw1Application.shoppingCart;
 	}
 }
