@@ -14,6 +14,9 @@ public class MovieShop {
         movies.add(MovieFactory.create("005", "12 Angry Men", 8.9, "Drama"));
 
     }
+    Movie movie = MovieFactory.getInstance().getMovie("Drama");
+    public MovieShop() {
+    }
 
     public List<Movie> listMovie() {
         return movies;
