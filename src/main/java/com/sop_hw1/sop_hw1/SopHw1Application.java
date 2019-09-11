@@ -18,21 +18,25 @@ public class SopHw1Application {
 
 	@RequestMapping("/")
 	String home(){
+		MovieFactory movieFactory = MovieFactory.getInstance();
 		return "Welcome";
 	}
 
 	@GetMapping("/movies")
 	public List<Movie> listMovies() {
+		MovieFactory movieFactory = MovieFactory.getInstance();
 		return shop.listMovie();
 	}
 
 	@GetMapping("/movies/{id}")
 	public Movie getMovie(@PathVariable String id) {
+		MovieFactory movieFactory = MovieFactory.getInstance();
 		return shop.getOne(id);
 	}
 
 	@RequestMapping("/cart")
 	public List<Movie> cartMovie(){
+		MovieFactory movieFactory = MovieFactory.getInstance();
 		return SopHw1Application.shoppingCart;
 	}
 }
